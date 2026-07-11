@@ -1,0 +1,108 @@
+"use client";
+
+import { motion, type Variants } from "framer-motion";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
+
+import { Button } from "@/components/ui/button";
+import { GradientMesh } from "@/components/gradient-mesh";
+import { stats, profile } from "@/lib/data";
+
+const EASE = [0.16, 1, 0.3, 1] as const;
+
+const container: Variants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.09, delayChildren: 0.1 } },
+};
+
+const item: Variants = {
+  hidden: { opacity: 0, y: 18 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, ease: EASE },
+  },
+};
+
+export function HeroSection() {
+  return (
+    <section id="top" className="relative overflow-hidden pt-40 pb-24 sm:pt-48 sm:pb-32">
+      <GradientMesh />
+
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={container}
+        className="relative mx-auto max-w-6xl px-6"
+      >
+        <motion.div variants={item}>
+          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-background-elevated/60 px-3.5 py-1.5 font-mono text-xs text-muted-foreground">
+            <span className="relative flex h-1.5 w-1.5">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent/60" />
+              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-accent" />
+            </span>
+            {profile.status}
+          </span>
+        </motion.div>
+
+        <motion.h1
+          variants={item}
+          className="mt-8 max-w-3xl text-balance text-5xl font-medium leading-[1.05] tracking-tight sm:text-6xl md:text-7xl"
+        >
+          Building software that helps people become{" "}
+          <span className="gradient-text">more disciplined.</span>
+        </motion.h1>
+
+        <motion.p
+          variants={item}
+          className="mt-7 max-w-xl text-lg leading-relaxed text-muted-foreground"
+        >
+          I&apos;m {profile.name} — a gap-year student from Uzbekistan preparing
+          to study Computer Science abroad, and spending this year building
+          real products instead of waiting for permission to start.
+        </motion.p>
+
+        <motion.div variants={item} className="mt-10 flex flex-wrap items-center gap-3">
+          <Button variant="gradient" size="lg" asChild>
+            <a href="#projects">
+              View Projects
+              <ArrowRight className="transition-transform group-hover:translate-x-0.5" />
+            </a>
+          </Button>
+          <Button variant="outline" size="lg" asChild>
+            <a href="#contact">
+              Contact Me
+              <ArrowUpRight className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </a>
+          </Button>
+        </motion.div>
+
+        {/* Signature element: a status-bar style stat ticker, echoing the
+            monitoring/dashboard aesthetic of the products this site references. */}
+        <motion.dl
+          variants={item}
+          className="mt-20 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-4"
+        >
+          {stats.map((stat) => (
+            <div
+              key={stat.label}
+              className="flex flex-col gap-1.5 bg-background-elevated/80 px-5 py-5 backdrop-blur-sm"
+            >
+              <dt className="font-mono text-[11px] uppercase tracking-[0.16em] text-muted">
+                {stat.label}
+              </dt>
+              <dd className="flex items-baseline gap-1">
+                <span className="text-2xl font-medium tracking-tight text-foreground">
+                  {stat.value}
+                </span>
+                {stat.suffix && (
+                  <span className="text-sm text-muted-foreground">{stat.suffix}</span>
+                )}
+              </dd>
+              <span className="text-xs text-muted-foreground">{stat.detail}</span>
+            </div>
+          ))}
+        </motion.dl>
+      </motion.div>
+    </section>
+  );
+}
