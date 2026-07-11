@@ -10,14 +10,53 @@ import { getGithubData, GITHUB_USERNAME } from "@/lib/github";
 export async function GithubSection() {
   const { profile, repos } = await getGithubData();
 
+  // If no data, show a fallback message
+  if (!profile) {
+    return (
+      <section id="github" className="relative border-t border-border py-24 sm:py-32">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="flex flex-wrap items-end justify-between gap-6">
+            <SectionHeading
+              eyebrow="GitHub"
+              title="Open-source footprint."
+              description="Live stats pulled directly from GitHub."
+            />
+            <Button variant="outline" size="sm" asChild>
+              <a href={`https://github.com/${GITHUB_USERNAME}`} target="_blank" rel="noreferrer">
+                <SiGithub />
+                @{GITHUB_USERNAME}
+              </a>
+            </Button>
+          </div>
+
+          <div className="mt-14 text-center py-12">
+            <p className="text-muted-foreground">
+              Unable to load GitHub data at the moment. Please check your connection
+              or try again later. You can still visit the profile directly:
+            </p>
+            <a
+              href={`https://github.com/${GITHUB_USERNAME}`}
+              className="inline-flex items-center gap-2 text-accent hover:text-accent/80"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <SiGithub className="h-4 w-4" />
+              {GITHUB_USERNAME}
+            </a>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   const statCards = [
     {
       label: "Public repositories",
-      value: profile?.public_repos ?? "\u2014",
+      value: profile.public_repos,
       icon: BookMarked,
     },
-    { label: "Followers", value: profile?.followers ?? "\u2014", icon: Star },
-    { label: "Following", value: profile?.following ?? "\u2014", icon: GitFork },
+    { label: "Followers", value: profile.followers, icon: Star },
+    { label: "Following", value: profile.following, icon: GitFork },
   ];
 
   return (
