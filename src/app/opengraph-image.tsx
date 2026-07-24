@@ -16,9 +16,9 @@ export default async function Image() {
           flexDirection: "column",
           justifyContent: "center",
           padding: "80px",
-          backgroundColor: "#08080b",
+          backgroundColor: "#0b0e10",
           backgroundImage:
-            "radial-gradient(circle at 85% 15%, rgba(124,108,240,0.35), transparent 55%), radial-gradient(circle at 10% 85%, rgba(79,127,255,0.25), transparent 55%)",
+            "radial-gradient(circle at 85% 15%, rgba(198,138,70,0.28), transparent 55%), radial-gradient(circle at 10% 85%, rgba(111,156,135,0.18), transparent 55%)",
         }}
       >
         <div
@@ -35,8 +35,8 @@ export default async function Image() {
               width: 56,
               height: 56,
               borderRadius: 999,
-              backgroundColor: "#f3f3f6",
-              color: "#08080b",
+              backgroundColor: "#f2efe9",
+              color: "#0b0e10",
               fontSize: 24,
               fontWeight: 700,
               alignItems: "center",
@@ -45,7 +45,7 @@ export default async function Image() {
           >
             AZ
           </div>
-          <div style={{ display: "flex", fontSize: 26, color: "#8b8b96" }}>
+          <div style={{ display: "flex", fontSize: 26, color: "#78878a" }}>
             afzal.dev
           </div>
         </div>
@@ -54,7 +54,7 @@ export default async function Image() {
             display: "flex",
             fontSize: 64,
             fontWeight: 600,
-            color: "#f3f3f6",
+            color: "#f2efe9",
             lineHeight: 1.15,
             maxWidth: 900,
           }}
@@ -66,7 +66,7 @@ export default async function Image() {
             display: "flex",
             marginTop: 32,
             fontSize: 28,
-            color: "#b5b5bf",
+            color: "#a7b1b0",
           }}
         >
           Afzal — Software Engineer &amp; CS Student

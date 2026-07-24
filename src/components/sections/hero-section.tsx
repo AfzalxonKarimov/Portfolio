@@ -4,7 +4,8 @@ import { motion, type Variants } from "framer-motion";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { GradientMesh } from "@/components/gradient-mesh";
+import { LedgerField } from "@/components/ledger-field";
+import { ConsistencyStrip } from "@/components/consistency-strip";
 import { stats, profile } from "@/lib/data";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
@@ -26,7 +27,7 @@ const item: Variants = {
 export function HeroSection() {
   return (
     <section id="top" className="relative overflow-hidden pt-40 pb-24 sm:pt-48 sm:pb-32">
-      <GradientMesh />
+      <LedgerField />
 
       <motion.div
         initial="hidden"
@@ -36,20 +37,17 @@ export function HeroSection() {
       >
         <motion.div variants={item}>
           <span className="inline-flex items-center gap-2 rounded-full border border-border bg-background-elevated/60 px-3.5 py-1.5 font-mono text-xs text-muted-foreground">
-            <span className="relative flex h-1.5 w-1.5">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent/60" />
-              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-accent" />
-            </span>
+            <span className="h-1.5 w-1.5 rounded-full bg-accent" />
             {profile.status}
           </span>
         </motion.div>
 
         <motion.h1
           variants={item}
-          className="mt-8 max-w-3xl text-balance text-5xl font-medium leading-[1.05] tracking-tight sm:text-6xl md:text-7xl"
+          className="mt-8 max-w-3xl text-balance font-display text-5xl font-medium leading-[1.08] tracking-tight sm:text-6xl md:text-7xl"
         >
           Building software that helps people become{" "}
-          <span className="gradient-text">more disciplined.</span>
+          <span className="ink-accent">more disciplined.</span>
         </motion.h1>
 
         <motion.p
@@ -62,7 +60,7 @@ export function HeroSection() {
         </motion.p>
 
         <motion.div variants={item} className="mt-10 flex flex-wrap items-center gap-3">
-          <Button variant="gradient" size="lg" asChild>
+          <Button variant="accent" size="lg" asChild>
             <a href="#projects">
               View Projects
               <ArrowRight className="transition-transform group-hover:translate-x-0.5" />
@@ -76,32 +74,38 @@ export function HeroSection() {
           </Button>
         </motion.div>
 
-        {/* Signature element: a status-bar style stat ticker, echoing the
-            monitoring/dashboard aesthetic of the products this site references. */}
-        <motion.dl
-          variants={item}
-          className="mt-20 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-4"
-        >
-          {stats.map((stat) => (
-            <div
-              key={stat.label}
-              className="flex flex-col gap-1.5 bg-background-elevated/80 px-5 py-5 backdrop-blur-sm"
-            >
-              <dt className="font-mono text-[11px] uppercase tracking-[0.16em] text-muted">
-                {stat.label}
-              </dt>
-              <dd className="flex items-baseline gap-1">
-                <span className="text-2xl font-medium tracking-tight text-foreground">
-                  {stat.value}
-                </span>
-                {stat.suffix && (
-                  <span className="text-sm text-muted-foreground">{stat.suffix}</span>
-                )}
-              </dd>
-              <span className="text-xs text-muted-foreground">{stat.detail}</span>
+        {/* Signature element: a literal day-by-day consistency curve -- dips
+            on a slip, climbs back on recovery -- echoing the exact mechanic
+            TheAnchor is built around, rather than a decorative dashboard. */}
+        <motion.div variants={item} className="mt-20 border-t border-border pt-8">
+          <div className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-muted">
+                Consistency score — a slip, then a recovery
+              </p>
+              <ConsistencyStrip className="mt-4 h-14 sm:h-16" />
             </div>
-          ))}
-        </motion.dl>
+
+            <dl className="grid grid-cols-2 gap-x-8 gap-y-5 sm:flex sm:gap-10">
+              {stats.map((stat) => (
+                <div key={stat.label}>
+                  <dt className="font-mono text-[11px] uppercase tracking-[0.16em] text-muted">
+                    {stat.label}
+                  </dt>
+                  <dd className="mt-1 flex items-baseline gap-1">
+                    <span className="font-display text-xl font-medium tracking-tight text-foreground">
+                      {stat.value}
+                    </span>
+                    {stat.suffix && (
+                      <span className="text-sm text-muted-foreground">{stat.suffix}</span>
+                    )}
+                  </dd>
+                  <span className="text-xs text-muted-foreground">{stat.detail}</span>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </motion.div>
       </motion.div>
     </section>
   );

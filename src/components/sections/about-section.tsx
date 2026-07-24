@@ -37,14 +37,12 @@ export function AboutSection() {
                 ))}
               </RevealGroup>
 
-              <div className="mt-6 rounded-xl border border-border bg-background/60 p-4">
-                <p className="text-sm leading-relaxed text-muted-foreground">
-                  Currently based in{" "}
-                  <span className="text-foreground">Uzbekistan</span>, spending
-                  a gap year building before starting a Computer Science
-                  degree abroad.
-                </p>
-              </div>
+              <p className="mt-6 border-t border-border pt-5 text-sm leading-relaxed text-muted-foreground">
+                Currently based in{" "}
+                <span className="text-foreground">Uzbekistan</span>, spending
+                a gap year building before starting a Computer Science
+                degree abroad.
+              </p>
             </div>
           </Reveal>
         </div>

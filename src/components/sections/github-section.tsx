@@ -84,7 +84,7 @@ export async function GithubSection() {
                   <stat.icon className="h-5 w-5" />
                 </div>
                 <div>
-                  <p className="text-2xl font-medium tracking-tight text-foreground">
+                  <p className="font-display text-2xl font-medium tracking-tight text-foreground">
                     {stat.value}
                   </p>
                   <p className="text-sm text-muted-foreground">{stat.label}</p>
@@ -127,7 +127,7 @@ export async function GithubSection() {
                   </p>
                   {repo.language && (
                     <span className="mt-4 inline-flex w-fit items-center gap-1.5 font-mono text-[11px] text-muted">
-                      <span className="h-2 w-2 rounded-full bg-accent-2" />
+                      <span className="h-2 w-2 rounded-full bg-recover" />
                       {repo.language}
                     </span>
                   )}

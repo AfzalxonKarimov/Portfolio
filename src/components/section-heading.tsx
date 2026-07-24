@@ -21,7 +21,7 @@ export function SectionHeading({
       </p>
       <h2
         className={cn(
-          "mt-3 text-balance text-3xl font-medium tracking-tight text-foreground sm:text-4xl",
+          "mt-3 text-balance font-display text-3xl font-medium tracking-tight text-foreground sm:text-4xl",
         )}
       >
         {title}

@@ -10,9 +10,9 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary:
-          "bg-foreground text-background hover:-translate-y-0.5 hover:shadow-[0_8px_30px_-8px_rgba(124,108,240,0.55)] active:translate-y-0",
-        gradient:
-          "text-white bg-[linear-gradient(120deg,var(--accent),var(--accent-2))] hover:-translate-y-0.5 hover:shadow-[0_8px_30px_-6px_rgba(124,108,240,0.65)] active:translate-y-0",
+          "bg-foreground text-background hover:-translate-y-0.5 hover:shadow-[0_8px_30px_-10px_rgba(198,138,70,0.45)] active:translate-y-0",
+        accent:
+          "bg-accent text-accent-foreground hover:-translate-y-0.5 hover:shadow-[0_8px_30px_-8px_rgba(198,138,70,0.55)] active:translate-y-0",
         outline:
           "border border-border text-foreground hover:border-border-strong hover:bg-background-elevated",
         ghost: "text-muted-foreground hover:text-foreground hover:bg-background-elevated",

@@ -78,7 +78,7 @@ export function ProjectsSection() {
                     </Button>
                   )}
                   {featured.demo && (
-                    <Button variant="gradient" size="sm" asChild>
+                    <Button variant="accent" size="sm" asChild>
                       <a href={featured.demo} target="_blank" rel="noreferrer">
                         Live demo
                         <ExternalLink />

@@ -69,7 +69,7 @@ export const projects: Project[] = [
     ],
     github: "https://github.com/AfzalxonKarimov",
     demo: "#",
-    gradient: "from-violet-500/25 via-indigo-500/15 to-transparent",
+    gradient: "from-accent/25 via-recover/10 to-transparent",
   },
   {
     slug: "ielts-telegram-bot",
@@ -87,7 +87,7 @@ export const projects: Project[] = [
       "Zero-install distribution through Telegram",
     ],
     github: "https://github.com/AfzalxonKarimov",
-    gradient: "from-sky-500/20 via-cyan-500/10 to-transparent",
+    gradient: "from-recover/20 via-accent/10 to-transparent",
   },
 ];
 

@@ -27,7 +27,7 @@ export function JourneySection() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
             style={{ transformOrigin: "top" }}
-            className="absolute left-[7px] top-1 bottom-1 w-px bg-gradient-to-b from-accent to-accent-2 sm:left-[11px]"
+            className="absolute left-[7px] top-1 bottom-1 w-px bg-accent sm:left-[11px]"
           />
 
           <ol className="space-y-12">
@@ -50,7 +50,7 @@ export function JourneySection() {
                   <p className="font-mono text-xs uppercase tracking-[0.16em] text-muted">
                     {step.date}
                   </p>
-                  <h3 className="mt-1.5 text-lg font-medium text-foreground">
+                  <h3 className="mt-1.5 font-display text-lg font-medium text-foreground">
                     {step.title}
                   </h3>
                   <p className="mt-1.5 max-w-xl text-sm leading-relaxed text-muted-foreground">

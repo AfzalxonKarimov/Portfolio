@@ -5,7 +5,7 @@ import { FaLinkedin } from "react-icons/fa6";
 import { SectionHeading } from "@/components/section-heading";
 import { Reveal, RevealGroup, RevealItem } from "@/components/reveal";
 import { Button } from "@/components/ui/button";
-import { GradientMesh } from "@/components/gradient-mesh";
+import { LedgerField } from "@/components/ledger-field";
 import { profile, contactLinks } from "@/lib/data";
 
 const ICONS = {
@@ -17,7 +17,7 @@ const ICONS = {
 export function ContactSection() {
   return (
     <section id="contact" className="relative overflow-hidden border-t border-border py-24 sm:py-32">
-      <GradientMesh className="opacity-70" />
+      <LedgerField className="opacity-70" />
       <div className="relative mx-auto max-w-6xl px-6">
         <SectionHeading
           eyebrow="Contact"
@@ -57,7 +57,7 @@ export function ContactSection() {
             Prefer a document? Grab a copy of my resume with my full academic
             and project background.
           </p>
-          <Button variant="gradient" size="lg" asChild>
+          <Button variant="accent" size="lg" asChild>
             <a href={profile.resumeHref} download>
               <FileDown />
               Download resume
