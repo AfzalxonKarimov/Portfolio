@@ -30,24 +30,23 @@ const plexMono = IBM_Plex_Mono({
 });
 
 const SITE_URL = "https://afzal.dev";
-const TITLE = "Afzal \u2014 Software Engineer & CS Student";
+const TITLE = "Afzalxon \u2014 Software Engineer & CS Student";
 const DESCRIPTION =
-  "Portfolio of Afzal, a gap-year student from Uzbekistan preparing to study Computer Science abroad. Building TheAnchor and other products focused on discipline and momentum.";
+  "Portfolio of Afzalxon, a gap-year student from Uzbekistan preparing to study Computer Science abroad. Building TheAnchor and other products focused on discipline and momentum.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: TITLE,
-    template: "%s \u00b7 Afzal",
+    template: "%s \u00b7 Afzalxon",
   },
   description: DESCRIPTION,
   keywords: [
-    "Afzal",
+    "Afzalxon",
     "software engineer",
     "portfolio",
     "React Native developer",
     "TheAnchor app",
-    "CS50",
     "Uzbekistan",
     "computer science student",
   ],

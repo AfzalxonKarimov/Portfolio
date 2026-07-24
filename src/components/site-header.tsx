@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
+  { href: "#focus", label: "Focus" },
   { href: "#about", label: "About" },
   { href: "#projects", label: "Projects" },
   { href: "#stack", label: "Stack" },
@@ -45,12 +46,12 @@ export function SiteHeader() {
           AZ
         </a>
 
-        <nav className="hidden items-center gap-1 md:flex">
+        <nav className="hidden items-center gap-0.5 lg:flex">
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="rounded-full px-3.5 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+              className="rounded-full px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
               {link.label}
             </a>

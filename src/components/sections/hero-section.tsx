@@ -54,9 +54,10 @@ export function HeroSection() {
           variants={item}
           className="mt-7 max-w-xl text-lg leading-relaxed text-muted-foreground"
         >
-          I&apos;m {profile.name} — a gap-year student from Uzbekistan preparing
-          to study Computer Science abroad, and spending this year building
-          real products instead of waiting for permission to start.
+          I&apos;m {profile.name} — a gap-year student from Uzbekistan
+          building software instead of waiting for a classroom to start.
+          Right now that means TheAnchor, a recovery-first habit app, while I
+          prepare to study Computer Science abroad.
         </motion.p>
 
         <motion.div variants={item} className="mt-10 flex flex-wrap items-center gap-3">
@@ -86,7 +87,7 @@ export function HeroSection() {
               <ConsistencyStrip className="mt-4 h-14 sm:h-16" />
             </div>
 
-            <dl className="grid grid-cols-2 gap-x-8 gap-y-5 sm:flex sm:gap-10">
+            <dl className="flex flex-wrap gap-x-8 gap-y-5">
               {stats.map((stat) => (
                 <div key={stat.label}>
                   <dt className="font-mono text-[11px] uppercase tracking-[0.16em] text-muted">

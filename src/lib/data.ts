@@ -5,7 +5,7 @@
 // ---------------------------------------------------------------------------
 
 export const profile = {
-  name: "Afzal",
+  name: "Afzalxon",
   fullTagline: "Building software that helps people become more disciplined.",
   location: "Uzbekistan",
   status: "Gap year \u00b7 Preparing for university",
@@ -19,19 +19,41 @@ export const stats = [
   { label: "GPA", value: "4.0", suffix: "/4.0", detail: "Unweighted" },
   { label: "SAT", value: "1420", suffix: "", detail: "Superscore" },
   { label: "IELTS", value: "7.5", suffix: "/9", detail: "Academic" },
-  { label: "CS50", value: "In Progress", suffix: "", detail: "Self-paced" },
 ] as const;
 
 export const about = {
   eyebrow: "About",
   heading: "From curiosity to craft.",
   paragraphs: [
-    "I'm Afzal, a gap-year student from Uzbekistan spending this year preparing to study Computer Science abroad \u2014 and building real things in the meantime instead of waiting for a classroom to start.",
-    "I started programming because I wanted to fix a problem no one else was solving for me: staying disciplined after motivation runs out. That question turned into hundreds of hours of building, breaking, and rebuilding \u2014 first small scripts, then a Telegram bot for IELTS students, and now TheAnchor, a mobile app built on the same idea.",
-    "I enjoy problems that sit at the intersection of behavior and engineering \u2014 where a good technical decision and a good human decision are the same decision. Debugging a race condition and figuring out why a habit fails scratch the same itch for me.",
-    "My goal is to become a software engineer and, eventually, an entrepreneur \u2014 someone who ships products that quietly make people's lives more workable, not just more entertained.",
+    "I'm Afzalxon, a gap-year student from Uzbekistan preparing to study Computer Science abroad. Instead of treating this year as a pause, I've spent it building — first small scripts, then a Telegram bot, and now a full mobile app.",
+    "The honest starting point was a personal problem: I'm consistent for a while, then I'm not, and generic habit trackers made that worse by wiping out my streak the moment I slipped. That frustration is what led to TheAnchor — an app built around recovering momentum instead of punishing a missed day.",
+    "Before that, I built a Telegram bot for IELTS students while studying for the exam myself, because I needed focused daily practice more than another app to install. Both projects came from the same place: build the tool I actually needed, then see if it helps anyone else.",
+    "Right now I'm splitting my time three ways — building TheAnchor, preparing my Computer Science university applications, and working through data structures, algorithms, and the fundamentals of AI on my own.",
   ],
 } as const;
+
+export type CurrentFocusItem = {
+  title: string;
+  description: string;
+};
+
+export const currentFocus: CurrentFocusItem[] = [
+  {
+    title: "Building TheAnchor",
+    description:
+      "Designing and building a recovery-first habit app end to end — product decisions, mobile engineering, and the backend behind it.",
+  },
+  {
+    title: "University applications",
+    description:
+      "Preparing my applications to study Computer Science abroad, alongside the projects on this page.",
+  },
+  {
+    title: "DSA & AI",
+    description:
+      "Working through data structures, algorithms, and the fundamentals of AI on my own, outside of any coursework.",
+  },
+];
 
 export type Project = {
   slug: string;
@@ -54,18 +76,18 @@ export const projects: Project[] = [
     name: "TheAnchor",
     tagline: "Recovery-first habit tracking for the days motivation runs out.",
     description:
-      "Most habit trackers punish a missed day with a broken streak and a guilt trip. TheAnchor is built around the opposite idea: motivation naturally decays between day 3 and day 14, so the app is designed to help people recover momentum instead of resetting it to zero. A consistency score dips when you slip and recovers as you show up again, difficulty adapts to your recent behavior, and accountability duos keep two people quietly checking in on each other.",
+      "Most habit trackers punish a missed day by wiping your streak back to zero — right when someone needs support, not guilt. TheAnchor is built around the opposite idea: you pick daily routines (\"Anchors\") like working out, reading, journaling or coding, and instead of a streak counter, the app tracks a Momentum score that dips when you slip and is designed to climb back up rather than reset. It's still under active development — the core loop of choosing anchors, checking in, and watching momentum recover is working, and I'm continuing to build it out.",
     featured: true,
     role: "Designer & Full-stack developer",
     status: "In active development",
     stack: ["React Native", "Expo", "TypeScript", "Supabase", "PostgreSQL"],
     features: [
-      "Time-based daily check-ins instead of rigid streak counting",
-      "A consistency score that dips and recovers rather than resets to zero",
-      "Identity-based framing \u2014 habits are tied to who you're becoming",
-      "Adaptive difficulty that responds to recent behavior",
-      "Accountability duos for quiet, mutual check-ins",
-      "Account-wide XP and rank progression, from Spark to Forged",
+      "Anchor routines — workout, meditate, read, journal, code, walk, or a custom one — each with a day and time target",
+      "A Momentum score (0–100) that dips after a missed day and is built to recover, not reset to zero",
+      "A separate Recovery score that measures how quickly you bounce back after a slip",
+      "A 6-month consistency calendar and an achievements list to make progress visible",
+      "Account-wide XP and rank progression, starting from Spark",
+      "Google sign-in, with data export and appearance settings",
     ],
     github: "https://github.com/AfzalxonKarimov",
     demo: "#",
@@ -122,12 +144,6 @@ export const journey: JourneyItem[] = [
     title: "Started programming",
     description:
       "Picked up my first language out of curiosity, not obligation \u2014 and kept going long after the tutorial ended.",
-  },
-  {
-    date: "Year 1\u20132",
-    title: "Completed CS50",
-    description:
-      "Worked through Harvard's CS50 end to end, from C to Python to web \u2014 the course that turned curiosity into a real foundation.",
   },
   {
     date: "Year 2",

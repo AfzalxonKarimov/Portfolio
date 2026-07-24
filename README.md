@@ -1,4 +1,4 @@
-# Afzal — Portfolio
+# Afzalxon — Portfolio
 
 A premium, minimal personal portfolio built with Next.js 15, TypeScript,
 Tailwind CSS v4, Framer Motion, and shadcn/ui-style components. Dark mode by

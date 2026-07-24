@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Afzal \u2014 Software Engineer & CS Student";
+export const alt = "Afzalxon \u2014 Software Engineer & CS Student";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -69,7 +69,7 @@ export default async function Image() {
             color: "#a7b1b0",
           }}
         >
-          Afzal — Software Engineer &amp; CS Student
+          Afzalxon — Software Engineer &amp; CS Student
         </div>
       </div>
     ),
